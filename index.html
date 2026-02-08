@@ -19,19 +19,27 @@
 </head>
 <body>
   <div class="page">
+
     <header class="header">
       <img src="assets/images/logo.svg"/>
-      <button class="mobile-menu-button">
+      <button class="open-menu">
         <img src="assets/images/icon-menu.svg" />
       </button>
-      <nav class="desktop-menu">
+      <nav class="menu">
         <a href="#">Home</a>
         <a href="#">New</a>
         <a href="#">Popular</a>
         <a href="#">Trending</a>
         <a href="#">Categories</a>
-        </nav>
+      </nav>
     </header>
+    <div class="nav-drawer">
+      <button class="close-menu">
+        <img src="assets/images/icon-menu-close.svg"/>
+      </button>
+    </div>
+    <div class="nav-overlay"></div>
+
     <main class="container">
       <article class="main-news">
         <img src="assets/images/image-web-3-desktop.jpg"/>
@@ -105,5 +113,7 @@
       Coded by <a href="#">Your Name Here</a>.
     </div>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+  <script src="index.js" charset="UTF-8"></script>
 </body>
 </html>

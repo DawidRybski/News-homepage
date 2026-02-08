@@ -20,13 +20,49 @@ header{
     padding: 2rem 0 1rem 0;
 }
 
-.mobile-menu-button{
+.open-menu{
     background: none;
     border: 0;
     cursor: pointer;
 }
 
-.desktop-menu{
+.nav-drawer{
+    position: fixed;
+    background-color: white;
+    width: 70%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.nav-overlay{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+        width: 30%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+}
+
+body.menu-open .nav-drawer, body.menu-open .nav-overlay, body.menu-open .close-menu{
+  display: block;
+}
+
+.nav-drawer, .nav-overlay, .close-menu{
+    display: none;
+}
+
+.close-menu{
+    position: absolute;
+    right: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+
+.menu{
     display: none;
 }
 
@@ -34,11 +70,29 @@ a{
     text-decoration: none;
 }
 
-.desktop-menu a{
+.menu a{
     color: hsl(236, 13%, 42%);
 }
 
-.desktop-menu a:hover{
+.menu a:hover{
+    color: hsl(5, 85%, 63%);
+}
+
+body.menu-open .nav-drawer .menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 8rem;
+    padding-left: 1rem;
+}
+
+.nav-drawer .menu a{
+    color: hsl(240, 100%, 5%);
+    font-size: 1.25rem;
+}
+
+.nav-drawer .menu a:hover{
     color: hsl(5, 85%, 63%);
 }
 
@@ -235,15 +289,15 @@ footer{
         grid-template-columns: 1fr 1fr;
     }
 
-    .desktop-menu{
+    .menu{
         display: flex;
         align-self: flex-end;
         gap: 3rem;
     }
 
-    .mobile-menu-button{
+    .open-menu, .nav-drawer , .nav-overlay, .close-menu{
         display: none;
-    }   
+    }
 
     .news-list{
         grid-template-columns: repeat(3, 1fr);
