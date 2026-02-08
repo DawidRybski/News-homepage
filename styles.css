@@ -9,8 +9,8 @@ body{
 
 .page{
   width: min(1100px, 100%);
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: auto;
+  padding: 1rem;
 }
 
 header{
@@ -20,32 +20,36 @@ header{
     padding: 2rem 0 1rem 0;
 }
 
-.menu{
-    align-self: flex-end;
-    display: flex;
-    gap: 3rem;
+.mobile-menu-button{
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.desktop-menu{
+    display: none;
 }
 
 a{
     text-decoration: none;
 }
 
-.menu a{
+.desktop-menu a{
     color: hsl(236, 13%, 42%);
 }
 
-.menu a:hover{
+.desktop-menu a:hover{
     color: hsl(5, 85%, 63%);
 }
 
 main{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas: 
-    "main side" 
-    "bottom bottom";
+    "main" 
+    "side" 
+    "bottom";
     gap: 2rem;
-    row-gap: 3rem;
     margin-top: 1rem;
 }
 
@@ -54,7 +58,7 @@ main{
 }
 
 h1{
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 0;
     padding: 1.5rem 3rem 1rem 0;
     line-height: 1.05;
@@ -62,7 +66,7 @@ h1{
 
 .main-article-card{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
 }
 
@@ -129,16 +133,17 @@ h3{
     margin: 1.25rem 0;
 }
 
-button{
+.main-news button{
     background-color: hsl(5, 85%, 63%);
     border: 0;
     padding: 0.75rem 2rem;
     font-weight: 800;
     align-self: flex-start;
-    letter-spacing: 0.1em; 
+    letter-spacing: 0.1em;
+    cursor: pointer;
 }
 
-button:hover{
+.main-news button:hover{
     background-color: hsl(240, 100%, 5%);
     color: hsl(233, 8%, 79%);
 }
@@ -150,7 +155,7 @@ button:hover{
     counter-reset: news;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
 }
 
@@ -212,4 +217,40 @@ img{
 
 footer{
     margin-top: auto;
+}
+
+@media (min-width: 768px){
+    main{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+        "main side" 
+        "bottom bottom";
+        gap: 2rem;
+        row-gap: 3rem;
+        margin-top: 1rem;
+    }
+
+    .main-article-card{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .desktop-menu{
+        display: flex;
+        align-self: flex-end;
+        gap: 3rem;
+    }
+
+    .mobile-menu-button{
+        display: none;
+    }   
+
+    .news-list{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    h1{
+        font-size: 3rem;
+        padding: 1.5rem 3rem 1rem 0;
+    }
 }
