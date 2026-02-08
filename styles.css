@@ -1,0 +1,215 @@
+body{
+    background-color: hsl(36, 100%, 99%);
+    min-height: 100vh;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.page{
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem 0;
+}
+
+.menu{
+    align-self: flex-end;
+    display: flex;
+    gap: 3rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+.menu a{
+    color: hsl(236, 13%, 42%);
+}
+
+.menu a:hover{
+    color: hsl(5, 85%, 63%);
+}
+
+main{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "main side" 
+    "bottom bottom";
+    gap: 2rem;
+    row-gap: 3rem;
+    margin-top: 1rem;
+}
+
+.main-news{
+    grid-area: main;
+}
+
+h1{
+    font-size: 3rem;
+    margin: 0;
+    padding: 1.5rem 3rem 1rem 0;
+    line-height: 1.05;
+}
+
+.main-article-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.main-article-card > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 0 0 0;
+}
+
+.main-article-card p{
+    padding: 0;
+    margin: 0;
+    color: hsl(236, 13%, 42%);
+}
+
+.bottom-news{
+    grid-area: bottom;
+}
+
+.bottom-news a{
+    color: hsl(240, 100%, 5%);
+}
+
+.side-news{
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    grid-area: side;
+    background-color: hsl(240, 100%, 5%);
+    color: white;
+    padding: 1rem;
+    gap: 0.5rem
+}
+
+h2{
+    font-size: 2rem;
+    margin: 0;
+    color: hsl(35, 77%, 62%);
+}
+
+h3{
+   margin: 0;
+}
+
+.side-news a{
+    color: hsl(233, 8%, 79%);
+}
+
+.side-news a:hover{
+    color: hsl(35, 77%, 62%);
+}
+
+.side-news p{
+    color: hsl(233, 8%, 79%);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.side-news hr{
+    border: 0;
+    border-top: 1px solid hsl(236, 13%, 42%);
+    margin: 1.25rem 0;
+}
+
+button{
+    background-color: hsl(5, 85%, 63%);
+    border: 0;
+    padding: 0.75rem 2rem;
+    font-weight: 800;
+    align-self: flex-start;
+    letter-spacing: 0.1em; 
+}
+
+button:hover{
+    background-color: hsl(240, 100%, 5%);
+    color: hsl(233, 8%, 79%);
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: news;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.news-list li {
+    counter-increment: news;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+}
+
+.news-card{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1rem;
+}
+
+.news-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-text h3{
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.news-text a:hover{
+    color: hsl(5, 85%, 63%);
+}
+
+.news-text p{
+    margin: 0;
+    color: hsl(236, 13%, 42%);
+}
+
+.news-text::before{
+    content: "0" counter(news);
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(5, 85%, 63%);
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.main-news img{
+    height: auto;
+}
+
+footer{
+    margin-top: auto;
+}
