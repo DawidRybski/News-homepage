@@ -19,11 +19,12 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-heavy: 800;
-
-
+    
 }
 
 body{
+    display: flex;
+    flex-direction: column;
     background-color: var(--neutral-color-white);
     min-height: 100vh;
     font-size: 15px;
@@ -33,9 +34,9 @@ body{
 }
 
 .page{
-  width: min(1100px, 100%);
-  margin: auto;
-  padding: var(--spacing-md);
+    width: min(1100px, 100%);
+    margin: auto;
+    padding: var(--spacing-md);
 }
 
 header{
@@ -295,7 +296,7 @@ img{
 }
 
 footer{
-    margin-top: auto;
+    margin-top: var(--spacing-xl);
 }
 
 @media (min-width: 768px){
